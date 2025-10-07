@@ -3,11 +3,21 @@
 
 Below are all the arguments for `perturb.py` for the remote evaluation:
 ```bash
-# Apply REN perturbation to CruxEval
+# Apply a perturbation to a pre-defined dataset
 python perturb.py \
-    --dataset "crux" \
-    --perturbation "REN" \
-    --output-name "crux_ren"
+    --dataset [crux|lcb] \
+    --perturbation [REN|RTF|GBC|PSC_ALL|MCC|MPS] \
+    --output-name "perturbed_dataset"
+
+# Apply MHC perturbation using GPT-4o to a customized dataset
+python perturb.py \
+    --dataset-path ".../crux.jsonl" \
+    --perturbation "MHC" \
+    --output-name "crux_mhc" \
+    --model "gpt-4o" \
+    --platform "openai" \
+    --task "output" \
+    --max-workers 5
 ```
 
 ### Dataset Source
@@ -53,12 +63,12 @@ Choose **one** of the following:
 Below are all the arguments for `generate.py` for the remote evaluation:
 ```bash
 python generate.py \
-    --dataset "crux" \
-    --perturbation "MCC" \
+    --dataset [crux|lcb] \
+    --perturbation [VAN|REN|RTF|GBC|PSC_ALL|MCC|MPS|MHC] \
     --model "gpt-4o-mini" \
-    --platform "openai" \
-    --task "output" \
-    --infer-mode "direct" \
+    --platform [openai|anthropic|gemini|azure|deepinfra|deepseek||qwen|sglang] \
+    --task [input|output] \
+    --infer-mode [direct|cot] \
     --num-samples 2 \
     --max-workers 10 \
     --load-existing \

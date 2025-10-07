@@ -33,24 +33,17 @@ In CodeCrash, we prepared three kinds of perturbations
 
 ### 🚀 Quick Start — Perturb a Dataset
 ```bash
-# Apply REN perturbation to CruxEval
+# Apply a perturbation to a pre-defined dataset
 python perturb.py \
-    --dataset "crux" \
-    --perturbation "REN" \
-    --output-name "crux_ren"
-
-# Apply MCC perturbation [with p=0.2] to LiveCodeBench
-python perturb.py \
-    --dataset "lcb" \
-    --perturbation "MCC" \
-    --output-name "lcb_mcc" \
-    --p 0.2
+    --dataset [crux|lcb] \
+    --perturbation [REN|RTF|GBC|PSC_ALL|MCC|MPS] \
+    --output-name "perturbed_dataset"
 
 # Apply MHC perturbation using GPT-4o to a customized dataset
 python perturb.py \
     --dataset-path ".../crux.jsonl" \
     --perturbation "MHC" \
-    --output-name "lcb_mhc" \
+    --output-name "crux_mhc" \
     --model "gpt-4o" \
     --platform "openai" \
     --task "output" \
@@ -68,12 +61,12 @@ python perturb.py \
 ### 🧪 Quick Start — Evaluate a Model
 ```bash
 python generate.py \
-    --dataset "crux" \
-    --perturbation "MCC" \
+    --dataset [crux|lcb] \
+    --perturbation [VAN|REN|RTF|GBC|PSC_ALL|MCC|MPS|MHC] \
     --model "gpt-4o-mini" \
-    --platform "openai" \
-    --task "output" \
-    --infer-mode "direct" \
+    --platform [openai|anthropic|gemini|azure|deepinfra|deepseek||qwen|sglang] \
+    --task [input|output] \
+    --infer-mode [direct|cot] \
     --num-samples 2 \
     --max-workers 10 \
     --load-existing \
