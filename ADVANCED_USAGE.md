@@ -1,5 +1,5 @@
 
-## 🎭 Perturbations
+## 🚀 Perturb a Dataset
 
 Below are all the arguments for `perturb.py` for the remote evaluation:
 
@@ -41,6 +41,64 @@ Choose **one** of the following:
 
 
 
+## 🧪 Quick Start — Evaluate a Model
+
+### 📊 Dataset Source
+
+Choose **one** of the following (mutually exclusive):
+
+| Argument | Type | Choices | Description |
+|----------|------|---------|-------------|
+| `--dataset` | `str` | `lcb`, `crux` | Loading pre-perturbed dataset from HuggingFace (LiveCodeBench or CruxEval) |
+| `--dataset-path` | `str` | - | Path to custom dataset file (JSONL format) |
+
+> [!Note]
+> `--perturbation` is **required** when using `--dataset`, and **cannot** be used with `--dataset-path`.
+
+
+### General Settings
+
+| Argument | Type | Default | Description |
+|----------|------|---------|-------------|
+| `--output-name` | `str` | 🤖* | Custom filename for solutions |
+| `--task` | `str` | **Required** | `input` or `output` prediction |
+| `--infer-mode` | `str` | **Required** | `direct` or `cot` (chain-of-thought) |
+| `-n, --num-samples` | `int` | `1` | Number of responses per question |
+| `--max-workers` | `int` | `1` | Parallel worker threads |
+| `--load-existing` | `flag` | `False` | Resume from existing solutions |
+
+> [!Note]
+> \*🤖 Auto-generated format: `{dataset}_{task}_{perturbation}_{infer_mode}.jsonl`.
+
+### Model Settings
+
+| Argument | Type | Required | Description |
+|----------|------|----------|-------------|
+| `--model` | `str` | ✅ | Model name (e.g., `gpt-4o-mini`, `claude-sonnet-4`) |
+| `--platform` | `str` | ✅ | Pre-defined platform: `openai`, `azure`, `deepinfra`, `deepseek`, `gemini`, `qwen`, `anthropic`, `sglang` |
+| `--folder-name` | `str` | 🤖* | Custom folder for outputs |
+
+> [!Note]
+> \*🤖 Auto-generate based on the model name by replacing `\` to `_`.
+
+### Model Configuration
+
+| Argument | Type | Default | Description / Range |
+|----------|------|---------|-------------------|
+| `--max-tokens` | `int` | `2000` | Maximum generation tokens |
+| `--temperature` | `float` | `0.2` | Sampling temperature / `[0.0, 2.0]` |
+| `--top-p` | `float` | `0.95` | Nucleus sampling / `[0.0, 1.0]` |
+| `--delay` | `int` | `0` | Delay between requests (seconds) |
+| `--stream` | `flag` | `False` | Enable streaming generation |
+| `--timeout` | `int` | `300` | Request timeout (seconds) |
+
+### Evaluation Settings
+
+| Argument | Type | Default | Description |
+|----------|------|---------|-------------|
+| `--evaluate` | `flag` | `False` | Auto-evaluate after generation |
+
+
 
 
 
@@ -67,7 +125,7 @@ Choose **one** of the following:
 In CodeCrash, we prepared three kinds of perturbations
 
 | Tag | Full Name | Type |
-|:------:|:-------------:|:-----------------:|
+|:------|:-------------|:-----------------|
 | `REN` | **Renaming Entities** | Structural |
 | `RTF` | **Reformatting Conditional Expressions** | Structural |
 | `GBC` | **Inserting Garbage Code Segments** | Structural |
