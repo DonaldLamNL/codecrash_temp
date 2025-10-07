@@ -1,4 +1,3 @@
-
 ## 🚀 Perturb a Dataset
 
 Below are all the arguments for `perturb.py` for the remote evaluation:
@@ -12,11 +11,11 @@ python perturb.py \
 # Apply MHC perturbation using GPT-4o to a customized dataset
 python perturb.py \
     --dataset-path ".../crux.jsonl" \
-    --perturbation "MHC" \
-    --output-name "crux_mhc" \
+    --perturbation MHC \
     --model "gpt-4o" \
-    --platform "openai" \
-    --task "output" \
+    --platform [openai|anthropic|gemini|azure|deepinfra|deepseek|qwen|sglang] \
+    --task [input|output] \
+    --output-name "crux_mhc" \
     --max-workers 5
 ```
 
@@ -66,7 +65,7 @@ python generate.py \
     --dataset [crux|lcb] \
     --perturbation [VAN|REN|RTF|GBC|PSC_ALL|MCC|MPS|MHC] \
     --model "gpt-4o-mini" \
-    --platform [openai|anthropic|gemini|azure|deepinfra|deepseek||qwen|sglang] \
+    --platform [openai|anthropic|gemini|azure|deepinfra|deepseek|qwen|sglang] \
     --task [input|output] \
     --infer-mode [direct|cot] \
     --num-samples 2 \
