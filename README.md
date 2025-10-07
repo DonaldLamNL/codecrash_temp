@@ -58,11 +58,11 @@ python perturb.py \
 ```
 - All perturbed datasets are saved in the `customize_datasets` directory.
 
-📁 Folder Structure:
-```
-customize_datasets/
-└── {output_name}.jsonl/
-```
+- 📁 Folder Structure:
+    ```
+    customize_datasets/
+    └── {output_name}.jsonl/
+    ```
 
 
 ### 🧪 Quick Start — Evaluate a Model
@@ -86,13 +86,13 @@ python generate.py \
 
 - Evaluation results are saved as `{dataset}_{task}_{perturbation}_{infer_mode}_eval.json` or `{output_name}_eval.json`.
 
-📁 Folder Structure:
-```
-results/
-└── {model_folder_name}/
-    └── {output_name}.jsonl
-    └── {output_name}_eval.json
-```
+- 📁 Folder Structure:
+    ```
+    results/
+    └── {model_folder_name}/
+        └── {output_name}.jsonl
+        └── {output_name}_eval.json
+    ```
 
 ## 🔑 API Access & Configuration
 All experiments were conducted through API access (including [OpenAI](https://platform.openai.com/docs/overview), [Anthropic](https://console.anthropic.com/login?returnTo=%2F%3F), [Gemini](https://aistudio.google.com), [AzureChat](https://azure.microsoft.com/en-us/get-started/azure-portal), [DeepInfra](https://deepinfra.com), [DeepSeek](https://platform.deepseek.com), and [Qwen](https://qwen.ai/home)), as well as via SGLang, which allows you to deploy and host your locally trained or Hugging Face LLMs.
