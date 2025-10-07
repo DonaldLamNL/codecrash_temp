@@ -49,7 +49,8 @@ python perturb.py \
     --output-name "crux_mhc" \
     --max-workers 5
 ```
-> [!Tips]
+
+> [!Tip]
 >
 > See the [🚀 Perturb a Dataset](ADVANCED_USAGE.md#-perturb-a-dataset) section for more details.
 
@@ -76,6 +77,10 @@ python generate.py \
     --load-existing \
     --evaluate
 ```
+
+> [!Tip]
+>
+> See the [🧪 Evaluate a Model](ADVANCED_USAGE.md#-evaluate-a-model) section for more details.
 
 - All results are saved in the `results` directory.
 
