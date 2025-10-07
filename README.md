@@ -1,6 +1,10 @@
 # CodeCrash
 Official repository for the paper "CodeCrash: Stress-Testing LLM Code Reasoning under Misleading Natural Language Perturbations"
 
+<center>
+<img src="https://github.com/DonaldLamNL/codecrash_temp/blob/main/assets/codecrash.svg?raw=true" alt="CodeCrash">
+</center>
+
 <p align="center">
     <a href="https://cuhk-arise.github.io/CodeCrash/">🏠 Home Page</a> •
     <a href="https://huggingface.co/datasets/CUHK-ARISE/CodeCrash">💻 Data </a> •

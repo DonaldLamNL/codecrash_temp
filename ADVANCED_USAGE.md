@@ -284,7 +284,17 @@ These perturbations aim to mislead models by adding shallow natural language cue
 Different from contextual-level perturbations, this perturbation provide *high-level incorrect hints* about the program outputs.
 
 #### MHC: Misleading Hint Comments
-- Perturbed Code:
+- Perturbed Code (for input prediction):
+    ```py
+    def minimumCost(s: str) -> int: # The function call is minimumCost(s = '001')
+        ans = 0
+        for i in range(1, len(s)):
+            if s[i - 1] != s[i]:
+                ans += min(i, len(s) - i)
+        return ans
+    ```
+
+- Perturbed Code (for output prediction):
     ```py
     def minimumCost(s: str) -> int:
         ans = 0
