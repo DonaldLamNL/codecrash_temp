@@ -35,25 +35,25 @@ In CodeCrash, we prepared three kinds of perturbations
 ```bash
 # Apply REN perturbation to CruxEval
 python perturb.py \
-    --dataset crux \
-    --perturbation REN \
-    --output-name crux_ren
+    --dataset "crux" \
+    --perturbation "REN" \
+    --output-name "crux_ren"
 
 # Apply MCC perturbation [with p=0.2] to LiveCodeBench
 python perturb.py \
-    --dataset lcb \
-    --perturbation MCC \
-    --output-name lcb_mcc \
+    --dataset "lcb" \
+    --perturbation "MCC" \
+    --output-name "lcb_mcc" \
     --p 0.2
 
 # Apply MHC perturbation using GPT-4o to a customized dataset
 python perturb.py \
     --dataset-path ".../crux.jsonl" \
-    --perturbation MHC \
-    --output-name lcb_mhc \
-    --model gpt-4o \
-    --platform openai \
-    --task output \
+    --perturbation "MHC" \
+    --output-name "lcb_mhc" \
+    --model "gpt-4o" \
+    --platform "openai" \
+    --task "output" \
     --max-workers 5
 ```
 - All perturbed datasets are saved in the `customize_datasets` directory.
@@ -128,3 +128,7 @@ QWEN_API_KEY="<your_qwen_api_key>"
 
 ## 🙏 Acknowledgement
 - [Code TREAT](https://code-treat.vercel.app/#home)
+
+## 📚 See Also
+
+- [Perturbation](PERTURBATION.md)
