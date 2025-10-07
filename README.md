@@ -30,6 +30,11 @@ In CodeCrash, we prepared three kinds of perturbations
 | `MPS` | **Misleading Print Statements** | Contextual-Level |
 | `MHC` | **Misleading Hint Comments** | Reasoning-Level |
 
+> [!Tip]
+>
+> See the [🎭 Perturbations Introduction](ADVANCED_USAGE.md#-perturbations-introduction) section for example usage for each perturbation.
+
+
 
 ### 🚀 Quick Start — Perturb a Dataset
 ```bash
@@ -130,7 +135,3 @@ QWEN_API_KEY="<your_qwen_api_key>"
 
 ## 🙏 Acknowledgement
 - [Code TREAT](https://code-treat.vercel.app/#home)
-
-## 📚 See Also
-
-- [Perturbation](PERTURBATION.md)

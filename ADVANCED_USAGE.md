@@ -74,7 +74,7 @@ python generate.py \
     --evaluate
 ```
 
-### 📊 Dataset Source
+### Dataset Source
 
 Choose **one** of the following (mutually exclusive):
 
@@ -128,27 +128,6 @@ Choose **one** of the following (mutually exclusive):
 | Argument | Type | Default | Description |
 |----------|------|---------|-------------|
 | `--evaluate` | `flag` | `False` | Auto-evaluate after generation |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## 🎭 Perturbations Introduction
