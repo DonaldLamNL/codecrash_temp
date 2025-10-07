@@ -2,7 +2,7 @@
 Official repository for the paper "CodeCrash: Stress-Testing LLM Code Reasoning under Misleading Natural Language Perturbations"
 
 <center>
-<img src="https://github.com/DonaldLamNL/codecrash_temp/blob/main/assets/codecrash.svg?raw=true" alt="CodeCrash">
+<img src="https://github.com/DonaldLamNL/codecrash_temp/blob/main/codecrash.svg?raw=true" alt="CodeCrash">
 </center>
 
 <p align="center">
