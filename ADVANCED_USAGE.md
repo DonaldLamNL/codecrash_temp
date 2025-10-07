@@ -2,6 +2,13 @@
 ## 🚀 Perturb a Dataset
 
 Below are all the arguments for `perturb.py` for the remote evaluation:
+```bash
+# Apply REN perturbation to CruxEval
+python perturb.py \
+    --dataset "crux" \
+    --perturbation "REN" \
+    --output-name "crux_ren"
+```
 
 ### Dataset Source
 
@@ -41,7 +48,22 @@ Choose **one** of the following:
 
 
 
-## 🧪 Quick Start — Evaluate a Model
+## 🧪 Evaluate a Model
+
+Below are all the arguments for `generate.py` for the remote evaluation:
+```bash
+python generate.py \
+    --dataset "crux" \
+    --perturbation "MCC" \
+    --model "gpt-4o-mini" \
+    --platform "openai" \
+    --task "output" \
+    --infer-mode "direct" \
+    --num-samples 2 \
+    --max-workers 10 \
+    --load-existing \
+    --evaluate
+```
 
 ### 📊 Dataset Source
 
